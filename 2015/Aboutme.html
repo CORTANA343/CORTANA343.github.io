@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="author" content="Anonymous" />
+		<meta name="description" content="personal page" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<link rel="stylesheet" type="text/css" href="js/fullPage.js-master/jquery.fullPage.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<title>About me</title>
+	</head>
+	<body>
+		<ul id="rightsidebar">
+		    <li data-menuanchor="page1" class="active"><a href="#page1"></a></li>
+		    <li data-menuanchor="page2"><a href="#page2"></a></li>
+		    <li data-menuanchor="page3"><a href="#page3"></a></li>
+		</ul>
+		<div id="nav">
+			<ul id="menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#page2">Runner</a></li>
+				<li><a href="#page3">Dorm</a></li>
+			</ul>
+		</div>
+		<div id="container">
+			<div class="section section1">
+				<p>Star Wars</p>
+				<h5>the dark side of the force</h5>
+			</div>
+			<div class="section section2">
+				<div id="background"></div>
+				<h1>Eventually</h1>
+				<h2>all things merge into one...and a river runs through it.</h2>
+				<a></a>
+			</div>
+			<div class="section section3">
+				<div class="slide slide1 active">
+					<div class="background">
+						<div id="left-bgblock">
+							<p>每日的栖息之地</p>
+						</div>
+					</div>
+				</div>
+           		<div class="slide slide2">
+           			<div id="pic1">
+           				<div></div>
+           				<p>请叫我孕老师</p>
+           			</div>
+           			<div id="pic2">
+           				<div></div>
+           				<p>一xx抡死你</p>
+           			</div>
+           			<div id="pic3">
+           				<div></div>
+           				<p>手抓饼专业户</p>
+           			</div>
+           			<div id="pic4">
+           				<div></div>
+           				<p>黑人王尼玛</p>
+           			</div>
+           		</div>
+			</div>
+		</h2>
+	</body>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/fullPage.js-master/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="js/main-2.js"></script>
+	<script type="text/javascript" src="js/hidden_menu.js"></script>
+	<script>
+		window.onload = function(){
+			/*点击图片缩小并显示字*/
+			var oDiv = document.getElementsByClassName('slide2');
+			var odivs = oDiv.getElementsByTagName('div');
+			
+			for(var i = 0;i < odivs.length;i ++){
+				odivs[i].onclick = function(){
+					
+				}
+			}
+		}
+	</script>
+</html>

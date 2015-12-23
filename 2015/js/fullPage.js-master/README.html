@@ -1,0 +1,632 @@
+<h1 id="fullPage-js"><a href="#fullPage-js" class="headerlink" title="fullPage.js"></a>fullPage.js</h1><p><img src="https://raw.github.com/alvarotrigo/fullPage.js/master/examples/imgs/intro.png" alt="preview"><br><img src="https://raw.github.com/alvarotrigo/fullPage.js/master/examples/imgs/compatible.gif" alt="compatibility"></p>
+<p><img src="http://img.shields.io/badge/fullPage.js-v2.7.6-brightgreen.svg" alt="fullPage.js version"><br><a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a><br>7Kb gziped!</p>
+<p>A simple and easy to use plugin to create fullscreen scrolling websites (also known as single page websites or onepage sites).<br>It allows the creation of fullscreen scrolling websites, as well as adding some landscape sliders inside the sections of the site.</p>
+<ul>
+<li><a href="http://alvarotrigo.com/fullPage/">Live demo</a></li>
+<li><a href="https://goo.gl/HuFudq">Wordpress theme</a></li>
+<li><a href="http://alvarotrigo.com/blog/fullpage-jquery-plugin-for-fullscreen-scrolling-websites/">Blog Article</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js/wiki/FAQ---Frequently-Answered-Questions">Frequently Answered Questions</a></li>
+</ul>
+<p>Invite me to a coffee<br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=BEK5JQCQMED4J&amp;lc=GB&amp;item_name=fullPage%2ejs&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="Donate"></a></p>
+<p>Customizations of the plugin and urgent changes are available upon request for some reasonable price. <a href="http://alvarotrigo.com/#contact-page">Contact me</a>.</p>
+<p>Would you like to have a website using fullpage.js functionality but you don’t know how to use it? I can do it for you for a reasonable price. <a href="http://alvarotrigo.com/#contact-page">Contact me</a>.</p>
+<ul>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#introduction">Introduction</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#compatibility">Compatibility</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#usage">Usage</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#options">Options</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#methods">Methods</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#lazy-loading">Lazy loading</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#creating-smaller-sections">Creating smaller sections</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#callbacks">Callbacks</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#build-tasks">Build tasks</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#resources">Resources</a></li>
+<li><a href="https://github.com/alvarotrigo/fullPage.js#who-is-using-fullpagejs">Who is using fullpage.js</a></li>
+</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Suggestion are more than welcome, not only for feature requests but also for coding style improvements.<br>Let’s make this a great plugin to make people’s lives easier!</p>
+<h2 id="Compatibility"><a href="#Compatibility" class="headerlink" title="Compatibility"></a>Compatibility</h2><p>fullPage.js is fully functional on all modern browsers, as well as some old ones such as Internet Explorer 8, 9, Opera 12, etc.<br>It works with browsers with CSS3 support and with the ones which don’t have it, making it ideal for old browsers compatibility.<br>It also provides touch support for mobile phones, tablets and touch screen computers.</p>
+<p><a href="http://www.browserstack.com/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/browserstack.png" alt="Browserstack"></a></p>
+<p>Special thanks to <a href="http://www.browserstack.com/">Browserstack</a> for supporting fullpage.js.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>As you can see in the example files, you will need to include:</p>
+<ul>
+<li><a href="http://jquery.com/">jQuery library</a>. (1.6.0 minimum)</li>
+<li>The JavaScript file <code>jquery.fullPage.js</code> (or its minified version <code>jquery.fullPage.min.js</code>)</li>
+<li><p>The css file <code>jquery.fullPage.css</code></p>
+<p><strong>Optionally</strong>, you can add the <a href="http://jqueryui.com/">jQuery UI library</a> in case you want to use other easing effects apart from the ones included in the jQuery library (<code>linear</code>, <code>swing</code> and <code>easeInOutCubic</code>) or the one included by default in fullPage.js (<code>easeInQuart</code>).</p>
+</li>
+</ul>
+<h3 id="Install_using_bower_or_npm"><a href="#Install_using_bower_or_npm" class="headerlink" title="Install using bower or npm"></a>Install using bower or npm</h3><p><strong>Optionally</strong>, you can install fullPage.js with bower or npm if you prefer:</p>
+<p>Terminal:</p>
+<pre><code class="shell">// With bower
+bower install fullpage.js
+
+// With npm
+npm install fullpage.js
+</code></pre>
+<p>###Including files:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"jquery.fullPage.css"</span> /&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+
+<span class="comment">&lt;!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". --&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"vendors/jquery.easings.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+
+
+<span class="comment">&lt;!-- This following line is only necessary in the case of using the plugin option `scrollOverflow:true` --&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"vendors/jquery.slimscroll.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"jquery.fullPage.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+<p>###Optional use of CDN<br>If you prefer to use a CDN to load the needed files, fullPage.js is in CDNJS:<br><a href="https://cdnjs.com/libraries/fullPage.js">https://cdnjs.com/libraries/fullPage.js</a></p>
+<p>###Required HTML structure<br>Each section will be defined with an element containing the <code>section</code> class.<br>The active section by default will be the first section, which is taken as the home page.</p>
+<p>Sections should be placed inside a wrapper (<code>&lt;div id=&quot;fullpage&quot;&gt;</code> in this case). The wrapper can not be the <code>body</code> element.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"fullpage"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>Some section<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>Some section<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>Some section<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>Some section<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<p>If you want to define a different starting point rather than the first section or the first slide of a section, just add the class <code>active</code> to the section and slide you want to load first.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section active"</span>&gt;</span>Some section<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<p>In order to create a landscape slider within a section, each slide will be defined by default with an element containing the <code>slide</code> class:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span> Slide 1 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span> Slide 2 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span> Slide 3 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span> Slide 4 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+`
+</code></pre>
+<p>You can see a fully working example of the HTML structure in the <a href="https://github.com/alvarotrigo/fullPage.js/blob/master/examples/demoPage.html"><code>demoPage.html</code> file</a>.</p>
+<p>###Initialization<br>All you need to do is call the plugin inside a <code>$(document).ready</code> function:</p>
+<pre><code class="javascript">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    $(<span class="string">'#fullpage'</span>).fullpage();
+});
+</code></pre>
+<p>A more complex initialization with all options set could look like this:</p>
+<pre><code class="javascript">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    $(<span class="string">'#fullpage'</span>).fullpage({
+        <span class="comment">//Navigation</span>
+        menu: <span class="string">'#menu'</span>,
+        lockAnchors: <span class="literal">false</span>,
+        anchors:[<span class="string">'firstPage'</span>, <span class="string">'secondPage'</span>],
+        navigation: <span class="literal">false</span>,
+        navigationPosition: <span class="string">'right'</span>,
+        navigationTooltips: [<span class="string">'firstSlide'</span>, <span class="string">'secondSlide'</span>],
+        showActiveTooltip: <span class="literal">false</span>,
+        slidesNavigation: <span class="literal">true</span>,
+        slidesNavPosition: <span class="string">'bottom'</span>,
+
+        <span class="comment">//Scrolling</span>
+        css3: <span class="literal">true</span>,
+        scrollingSpeed: <span class="number">700</span>,
+        autoScrolling: <span class="literal">true</span>,
+        fitToSection: <span class="literal">true</span>,
+        fitToSectionDelay: <span class="number">1000</span>,
+        scrollBar: <span class="literal">false</span>,
+        easing: <span class="string">'easeInOutCubic'</span>,
+        easingcss3: <span class="string">'ease'</span>,
+        loopBottom: <span class="literal">false</span>,
+        loopTop: <span class="literal">false</span>,
+        loopHorizontal: <span class="literal">true</span>,
+        continuousVertical: <span class="literal">false</span>,
+        normalScrollElements: <span class="string">'#element1, .element2'</span>,
+        scrollOverflow: <span class="literal">false</span>,
+        touchSensitivity: <span class="number">15</span>,
+        normalScrollElementTouchThreshold: <span class="number">5</span>,
+
+        <span class="comment">//Accessibility</span>
+        keyboardScrolling: <span class="literal">true</span>,
+        animateAnchor: <span class="literal">true</span>,
+        recordHistory: <span class="literal">true</span>,
+
+        <span class="comment">//Design</span>
+        controlArrows: <span class="literal">true</span>,
+        verticalCentered: <span class="literal">true</span>,
+        resize : <span class="literal">false</span>,
+        sectionsColor : [<span class="string">'#ccc'</span>, <span class="string">'#fff'</span>],
+        paddingTop: <span class="string">'3em'</span>,
+        paddingBottom: <span class="string">'10px'</span>,
+        fixedElements: <span class="string">'#header, .footer'</span>,
+        responsiveWidth: <span class="number">0</span>,
+        responsiveHeight: <span class="number">0</span>,
+
+        <span class="comment">//Custom selectors</span>
+        sectionSelector: <span class="string">'.section'</span>,
+        slideSelector: <span class="string">'.slide'</span>,
+
+        <span class="comment">//events</span>
+        onLeave: <span class="function"><span class="keyword">function</span>(<span class="params">index, nextIndex, direction</span>)</span>{},
+        afterLoad: <span class="function"><span class="keyword">function</span>(<span class="params">anchorLink, index</span>)</span>{},
+        afterRender: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{},
+        afterResize: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{},
+        afterSlideLoad: <span class="function"><span class="keyword">function</span>(<span class="params">anchorLink, index, slideAnchor, slideIndex</span>)</span>{},
+        onSlideLeave: <span class="function"><span class="keyword">function</span>(<span class="params">anchorLink, index, slideIndex, direction, nextSlideIndex</span>)</span>{}
+    });
+});
+</code></pre>
+<h3 id="Creating_links_to_sections_or_slides"><a href="#Creating_links_to_sections_or_slides" class="headerlink" title="Creating links to sections or slides"></a>Creating links to sections or slides</h3><p>If you are using fullPage.js with anchor links for the sections (using the <code>anchors</code> option or the attribute <code>data-anchor</code> in each section), then you will be able to use anchor links also to navigate directly to a certain slide inside a section.</p>
+<p>This would be an example of a link with an anchor: <a href="http://alvarotrigo.com/fullPage/#secondPage/2">http://alvarotrigo.com/fullPage/#secondPage/2</a> (which is the URL you will see once you access to that section/slide manually)<br>Notice the last part of the URL ends in <code>#secondPage/2</code>.</p>
+<p>Having the following initialization:</p>
+<pre><code class="javascript">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    $(<span class="string">'#fullpage'</span>).fullpage({
+        anchors:[<span class="string">'firstPage'</span>, <span class="string">'secondPage'</span>, <span class="string">'thirdPage'</span>]
+    });
+});
+</code></pre>
+<p>The anchor at the end of the URL <code>#secondPage/2</code> defines the section and slide of destination respectively. In the previous URL, the section of destination will be the one defined with the anchor <code>secondPage</code> and the slide will be the 2nd slide, as we are using the index <code>2</code> for it. (the fist slide of a section has index 0, as technically it is a section).</p>
+<p>We could have used a custom anchor for the slide instead of its index if we would have used the attribute <code>data-anchor</code> on the HTML markup like so:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span> <span class="attr">data-anchor</span>=<span class="string">"slide1"</span>&gt;</span> Slide 1 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span> <span class="attr">data-anchor</span>=<span class="string">"slide2"</span>&gt;</span> Slide 2 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span> <span class="attr">data-anchor</span>=<span class="string">"slide3"</span>&gt;</span> Slide 3 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span> <span class="attr">data-anchor</span>=<span class="string">"slide4"</span>&gt;</span> Slide 4 <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<p>In this last case, the URL we would use would be <code>#secondPage/slide3</code>, which is the equivalent to our previous <code>#secondPage/2</code>.</p>
+<p>Note that section anchors can also be defined in the same way, by using the <code>data-anchor</code> attribute, if no <code>anchors</code> array is provided.</p>
+<p><strong>Be careful!</strong> <code>data-anchor</code> tags can not have the same value as any ID element on the site (or NAME element for IE).</p>
+<h3 id="Creating_smaller_sections"><a href="#Creating_smaller_sections" class="headerlink" title="Creating smaller sections"></a>Creating smaller sections</h3><p>It is possible to use sections or slides which don’t take the whole viewport height resulting in smaller sections. This is ideal for footers.<br>It is important to realise that it doesn’t make sense to have all of your sections using this feature. If there is more than one section in the initial load of the site, the plugin won’t scroll at all to see the next one as it will be already in the viewport.</p>
+<p>To create smaller sections just use the class <code>fp-auto-height</code> in the section you want to apply it. It will then take the height defined by your section/slide content.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>Whole viewport<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section fp-auto-height"</span>&gt;</span>Auto height<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><ul>
+<li><p><code>controlArrows</code>: (default <code>true</code>) Determines whether to use control arrows for the slides to move right or left.</p>
+</li>
+<li><p><code>verticalCentered</code>: (default <code>true</code>) Vertically centering of the content within sections. When set to <code>true</code>, your content will be wrapped by the plugin. Consider using delegation or load your other scripts in the <code>afterRender</code> callback.</p>
+</li>
+<li><p><code>resize</code>: (default <code>false</code>) Whether you want to resize the text when the window is resized.</p>
+</li>
+<li><p><code>scrollingSpeed</code>: (default <code>700</code>) Speed in milliseconds for the scrolling transitions.</p>
+</li>
+<li><p><code>sectionsColor</code>:(default <code>none</code>) Define the CSS <code>background-color</code> property for each section:<br>Example:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+  sectionsColor: [<span class="string">'#f2f2f2'</span>, <span class="string">'#4BBFC3'</span>, <span class="string">'#7BAABE'</span>, <span class="string">'whitesmoke'</span>, <span class="string">'#000'</span>],
+});
+</code></pre>
+</li>
+<li><p><code>anchors</code>: (default <code>[]</code>) Defines the anchor links (#example) to be shown on the URL for each section. Anchors value should be unique. The position of the anchors in the array will define to which sections the anchor is applied. (second position for second section and so on). Using anchors forward and backward navigation will also be possible through the browser. This option also allows users to bookmark a specific section or slide. <strong>Be careful!</strong> anchors can not have the same value as any ID element on the site (or NAME element for IE).<br>Now anchors can be defined directly in the HTML structure by using the attribute <code>data-anchor</code> as explained here.</p>
+</li>
+<li><p><code>lockAnchors</code>: (default <code>false</code>). Determines whether anchors in the URL will have any effect at all in the plugin. You can still using anchors internally for your own functions and callbacks, but they won’t have any effect in the scrolling of the site. Useful if you want to combine fullPage.js with other plugins using anchor in the URL.</p>
+</li>
+</ul>
+<p><strong>Important</strong> It is helpful to understand that the values in the <code>anchors</code> option array correlate directly to the element with the class of <code>.section</code> by it’s position in the markup.</p>
+<ul>
+<li><p><code>easing</code>: (default <code>easeInOutCubic</code>) Defines the transition effect to use for the vertical and horizontal scrolling.<br>It requires the file <code>vendors/jquery.easings.min.js</code> or <a href="http://jqueryui.com/">jQuery UI</a> for using some of <a href="http://api.jqueryui.com/easings/">its transitions</a>. Other libraries could be used instead.</p>
+</li>
+<li><p><code>easingcss3</code>: (default <code>ease</code>) Defines the transition effect to use in case of using <code>css3:true</code>. You can use the <a href="http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp">pre-defined ones</a> (such as <code>linear</code>, <code>ease-out</code>…) or create your own ones using the <code>cubic-bezier</code> function. You might want to use <a href="http://matthewlein.com/ceaser/">Matthew Lein CSS Easing Animation Tool</a> for it.</p>
+</li>
+<li><p><code>loopTop</code>: (default <code>false</code>) Defines whether scrolling up in the first section should scroll to the last one or not.</p>
+</li>
+<li><p><code>loopBottom</code>: (default <code>false</code>) Defines whether scrolling down in the last section should scroll to the first one or not.</p>
+</li>
+<li><p><code>loopHorizontal</code>: (default <code>true</code>) Defines whether horizontal sliders will loop after reaching the last or previous slide or not.</p>
+</li>
+<li><p><code>css3</code>: (default <code>true</code>). Defines whether to use JavaScript or CSS3 transforms to scroll within sections and slides. Useful to speed up the movement in tablet and mobile devices with browsers supporting CSS3. If this option is set to <code>true</code> and the browser doesn’t support CSS3, a jQuery fallback will be used instead.</p>
+</li>
+<li><p><code>autoScrolling</code>: (default <code>true</code>) Defines whether to use the “automatic” scrolling or the “normal” one. It also has affects the way the sections fit in the browser/device window in tablets and mobile phones.</p>
+</li>
+<li><p><code>fitToSection</code>: (default <code>true</code>). Determines whether or not to fit sections to the viewport or not. When set to <code>true</code> the current active section will always fill the whole viewport. Otherwise the user will be free to stop in the middle of a section (when )</p>
+</li>
+<li><p><code>fitToSectionDelay</code>: (default 1000). If <code>fitToSection</code> is set to true, this delays<br>the fitting by the configured milliseconds.</p>
+</li>
+<li><p><code>scrollBar</code>: (default <code>false</code>). Determines whether to use scrollbar for the site or not. In case of using scroll bar, the <code>autoScrolling</code> functionality will still working as expected. The user will also be free to scroll the site with the scroll bar and fullPage.js will fit the section in the screen when scrolling finishes.</p>
+</li>
+<li><p><code>paddingTop</code>: (default <code>0</code>) Defines the top padding for each section with a numerical value and its measure (paddingTop: ‘10px’, paddingTop: ‘10em’…) Useful in case of using a fixed header.</p>
+</li>
+<li><p><code>paddingBottom</code>: (default <code>0</code>) Defines the bottom padding for each section with a numerical value and its measure (paddingBottom: ‘10px’, paddingBottom: ‘10em’…). Useful in case of using a fixed footer.</p>
+</li>
+<li><p><code>fixedElements</code>: (default <code>null</code>) Defines which elements will be taken off the scrolling structure of the plugin which is necessary when using the <code>css3</code> option to keep them fixed. It requires a string with the jQuery selectors for those elements. (For example: <code>fixedElements: &#39;#element1, .element2&#39;</code>)</p>
+</li>
+<li><p><code>normalScrollElements</code>: (default <code>null</code>) If you want to avoid the auto scroll when scrolling over some elements, this is the option you need to use. (useful for maps, scrolling divs etc.) It requires a string with the jQuery selectors for those elements. (For example: <code>normalScrollElements: &#39;#element1, .element2&#39;</code>)</p>
+</li>
+<li><p><code>normalScrollElementTouchThreshold</code> : (default <code>5</code>) Defines the threshold for the number of hops up the html node tree Fullpage will test to see if <code>normalScrollElements</code> is a match to allow scrolling functionality on divs on a touch device. (For example: <code>normalScrollElementTouchThreshold: 3</code>)</p>
+</li>
+<li><p><code>keyboardScrolling</code>: (default <code>true</code>) Defines if the content can be navigated using the keyboard</p>
+</li>
+<li><p><code>touchSensitivity</code>: (default <code>5</code>) Defines a percentage of the browsers window width/height, and how far a swipe must measure for navigating to the next section / slide</p>
+</li>
+<li><p><code>continuousVertical</code>: (default <code>false</code>) Defines whether scrolling down in the last section should scroll down to the first one or not, and if scrolling up in the first section should scroll up to the last one or not. Not compatible with <code>loopTop</code> or <code>loopBottom</code>.</p>
+</li>
+<li><p><code>animateAnchor</code>: (default <code>true</code>) Defines whether the load of the site when given an anchor (#) will scroll with animation to its destination or will directly load on the given section.</p>
+</li>
+<li><p><code>recordHistory</code>: (default <code>true</code>) Defines whether to push the state of the site to the browser’s history. When set to <code>true</code> each section/slide of the site will act as a new page and the back and forward buttons of the browser will scroll the sections/slides to reach the previous or next state of the site. When set to <code>false</code>, the URL will keep changing but will have no effect ont he browser’s history. This option is automatically turned off when using <code>autoScrolling:false</code>.</p>
+</li>
+<li><p><code>menu</code>: (default <code>false</code>) A selector can be used to specify the menu to link with the sections. This way the scrolling of the sections will activate the corresponding element in the menu using the class <code>active</code>.<br>This won’t generate a menu but will just add the <code>active</code> class to the element in the given menu with the corresponding anchor links.<br>In order to link the elements of the menu with the sections, an HTML 5 data-tag (<code>data-menuanchor</code>) will be needed to use with the same anchor links as used within the sections. Example:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"myMenu"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-menuanchor</span>=<span class="string">"firstPage"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#firstPage"</span>&gt;</span>First section<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-menuanchor</span>=<span class="string">"secondPage"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#secondPage"</span>&gt;</span>Second section<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-menuanchor</span>=<span class="string">"thirdPage"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#thirdPage"</span>&gt;</span>Third section<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-menuanchor</span>=<span class="string">"fourthPage"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#fourthPage"</span>&gt;</span>Fourth section<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">ul</span>&gt;</span>
+</code></pre>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+  anchors: [<span class="string">'firstPage'</span>, <span class="string">'secondPage'</span>, <span class="string">'thirdPage'</span>, <span class="string">'fourthPage'</span>, <span class="string">'lastPage'</span>],
+  menu: <span class="string">'#myMenu'</span>
+});
+</code></pre>
+</li>
+</ul>
+<p><strong>Note:</strong> the menu element should be placed outside the fullpage wrapper in order to avoid problem when using <code>css3:true</code>. Otherwise it will be appended to the <code>body</code> by the plugin itself.</p>
+<ul>
+<li><p><code>navigation</code>: (default <code>false</code>) If set to <code>true</code>, it will show a navigation bar made up of small circles.</p>
+</li>
+<li><p><code>navigationPosition</code>: (default <code>none</code>) It can be set to <code>left</code> or <code>right</code> and defines which position the navigation bar will be shown (if using one).</p>
+</li>
+<li><p><code>navigationTooltips</code>: (default []) Defines the tooltips to show for the navigation circles in case they are being used. Example: <code>navigationTooltips: [&#39;firstSlide&#39;, &#39;secondSlide&#39;]</code>.</p>
+</li>
+<li><p><code>showActiveTooltip</code>: (default <code>false</code>) Shows a persistent tooltip for the actively viewed section in the vertical navigation.</p>
+</li>
+<li><p><code>slidesNavigation</code>: (default <code>false</code>) If set to <code>true</code> it will show a navigation bar made up of small circles for each landscape slider on the site.</p>
+</li>
+<li><p><code>slidesNavPosition</code>: (default <code>bottom</code>) Defines the position for the landscape navigation bar for sliders. Admits <code>top</code> and <code>bottom</code> as values. You may want to modify the CSS styles to determine the distance from the top or bottom as well as any other style such as color.</p>
+</li>
+<li><p><code>scrollOverflow</code>: (default <code>false</code>) defines whether or not to create a scroll for the section in case its content is bigger than the height of it. When set to <code>true</code>, your content will be wrapped by the plugin. Consider using delegation or load your other scripts in the <code>afterRender</code> callback.<br>In case of setting it to <code>true</code>, it requires the vendor plugin <a href="https://github.com/rochal/jQuery-slimScroll"><code>jquery.slimscroll.min</code></a> and it should be loaded before the fullPage.js plugin. For example:</p>
+</li>
+</ul>
+<pre><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"vendors/jquery.slimscroll.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"jquery.fullPage.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+<ul>
+<li><p><code>sectionSelector</code>: (default <code>.section</code>) Defines the jQuery selector used for the plugin sections. It might need to be changed sometimes to avoid problem with other plugins using the same selectors as fullpage.js..</p>
+</li>
+<li><p><code>slideSelector</code>: (default <code>.slide</code>)  Defines the jQuery selector used for the plugin slides.  It might need to be changed sometimes to avoid problem with other plugins using the same selectors as fullpage.js.</p>
+</li>
+<li><p><code>responsiveWidth</code>: (default <code>0</code>)  A normal scroll (<code>autoScrolling:false</code>) will be used under the defined width in pixels. A class <code>fp-responsive</code> is added to the body tag in case the user wants to use it for his own responsive CSS. For example, if set to 900, whenever the browser’s width is less than 900 the plugin will scroll like a normal site.</p>
+</li>
+<li><p><code>responsiveHeight</code>: (default <code>0</code>)  A normal scroll (<code>autoScrolling:false</code>) will be used under the defined height in pixels. A class <code>fp-responsive</code> is added to the body tag in case the user wants to use it for his own responsive CSS. For example, if set to 900, whenever the browser’s height is less than 900 the plugin will scroll like a normal site.</p>
+</li>
+</ul>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>You can see them in action <a href="http://alvarotrigo.com/fullPage/examples/methods.html">here</a></p>
+<h3 id="moveSectionUp_28_29"><a href="#moveSectionUp_28_29" class="headerlink" title="moveSectionUp()"></a>moveSectionUp()</h3><p><a href="http://codepen.io/alvarotrigo/pen/GJXNMN">Demo</a> Scrolls one section up:</p>
+<pre><code class="javascript">$.fn.fullpage.moveSectionUp();
+</code></pre>
+<hr>
+<h3 id="moveSectionDown_28_29"><a href="#moveSectionDown_28_29" class="headerlink" title="moveSectionDown()"></a>moveSectionDown()</h3><p><a href="http://codepen.io/alvarotrigo/pen/jPvVZx">Demo</a> Scrolls one section down:</p>
+<pre><code class="javascript">$.fn.fullpage.moveSectionDown();
+</code></pre>
+<hr>
+<h3 id="moveTo_28section_2C_slide_29"><a href="#moveTo_28section_2C_slide_29" class="headerlink" title="moveTo(section, slide)"></a>moveTo(section, slide)</h3><p><a href="http://codepen.io/alvarotrigo/pen/doqOmY">Demo</a> Scrolls the page to the given section and slide. The first slide, the visible one by default, will have index 0.</p>
+<pre><code class="javascript"><span class="comment">/*Scrolling to the section with the anchor link `firstSlide` and to the 2nd Slide */</span>
+$.fn.fullpage.moveTo(<span class="string">'firstSlide'</span>, <span class="number">2</span>);
+</code></pre>
+<pre><code class="javascript"><span class="comment">//Scrolling to the 3rd section in the site</span>
+$.fn.fullpage.moveTo(<span class="number">3</span>, <span class="number">0</span>);
+
+<span class="comment">//Which is the same as</span>
+$.fn.fullpage.moveTo(<span class="number">3</span>);
+</code></pre>
+<hr>
+<h3 id="silentMoveTo_28section_2C_slide_29"><a href="#silentMoveTo_28section_2C_slide_29" class="headerlink" title="silentMoveTo(section, slide)"></a>silentMoveTo(section, slide)</h3><p><a href="http://codepen.io/alvarotrigo/pen/doqOeY">Demo</a><br>Exactly the same as <a href="https://github.com/alvarotrigo/fullPage.js#movetosection-slide"><code>moveTo</code></a> but in this case it performs the scroll without animation. A direct jump to the destination.</p>
+<pre><code class="javascript"><span class="comment">/*Scrolling to the section with the anchor link `firstSlide` and to the 2nd Slide */</span>
+$.fn.fullpage.silentMoveTo(<span class="string">'firstSlide'</span>, <span class="number">2</span>);
+</code></pre>
+<hr>
+<h3 id="moveSlideRight_28_29"><a href="#moveSlideRight_28_29" class="headerlink" title="moveSlideRight()"></a>moveSlideRight()</h3><p><a href="http://codepen.io/alvarotrigo/pen/Wvgoyz">Demo</a><br>Scrolls the horizontal slider of the current section to the next slide:</p>
+<pre><code class="javascript">$.fn.fullpage.moveSlideRight();
+</code></pre>
+<hr>
+<h3 id="moveSlideLeft_28_29"><a href="#moveSlideLeft_28_29" class="headerlink" title="moveSlideLeft()"></a>moveSlideLeft()</h3><p><a href="http://codepen.io/alvarotrigo/pen/gpdLjW">Demo</a><br>Scrolls the horizontal slider of the current section to the previous slide:</p>
+<pre><code class="javascript">$.fn.fullpage.moveSlideLeft();
+</code></pre>
+<hr>
+<h3 id="setAutoScrolling_28boolean_29"><a href="#setAutoScrolling_28boolean_29" class="headerlink" title="setAutoScrolling(boolean)"></a>setAutoScrolling(boolean)</h3><p><a href="http://codepen.io/alvarotrigo/pen/rVZWrR">Demo</a> Sets the scrolling configuration in real time.<br>Defines the way the page scrolling behaves. If it is set to <code>true</code>, it will use the “automatic” scrolling, otherwise, it will use the “manual” or “normal” scrolling of the site. Be careful when combining this option with <code>scrollOverflow</code> set to true, as it might be difficult to scroll using the mouse wheel or the trackpad when the section is scrollable.</p>
+<pre><code class="javascript">$.fn.fullpage.setAutoScrolling(<span class="literal">false</span>);
+</code></pre>
+<hr>
+<h3 id="setFitToSection_28boolean_29"><a href="#setFitToSection_28boolean_29" class="headerlink" title="setFitToSection(boolean)"></a>setFitToSection(boolean)</h3><p><a href="http://codepen.io/alvarotrigo/pen/GJXNYm">Demo</a><br>Sets the value for the option <code>fitToSection</code> determining whether to fit the section in the screen or not.</p>
+<pre><code class="javascript">$.fn.fullpage.setFitToSection(<span class="literal">false</span>);
+</code></pre>
+<hr>
+<h3 id="setLockAnchors_28boolean_29"><a href="#setLockAnchors_28boolean_29" class="headerlink" title="setLockAnchors(boolean)"></a>setLockAnchors(boolean)</h3><p><a href="http://codepen.io/alvarotrigo/pen/yNxVRQ">Demo</a><br>Sets the value for the option <code>lockAnchors</code> determining whether anchors will have any effect in the URL or not.</p>
+<pre><code class="javascript">$.fn.fullpage.setLockAnchors(<span class="literal">false</span>);
+</code></pre>
+<hr>
+<h3 id="setAllowScrolling_28boolean_2C__5Bdirections_5D_29"><a href="#setAllowScrolling_28boolean_2C__5Bdirections_5D_29" class="headerlink" title="setAllowScrolling(boolean, [directions])"></a>setAllowScrolling(boolean, [directions])</h3><p><a href="http://codepen.io/alvarotrigo/pen/EjeNdq">Demo</a> Adds or remove the possibility of scrolling through sections by using the mouse wheel/trackpad or touch gestures (which is active by default). Note this won’t disable the keyboard scrolling. You<br>would need to use <code>setKeyboardScrolling</code> for it.</p>
+<ul>
+<li><code>directions</code>: (optional parameter) Admitted values: <code>all</code>, <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code> or a combination of them separated by commas like <code>down, right</code>. It defines the direction for which the scrolling will be enabled or disabled.</li>
+</ul>
+<pre><code class="javascript">
+<span class="comment">//disabling scrolling</span>
+$.fn.fullpage.setAllowScrolling(<span class="literal">false</span>);
+
+<span class="comment">//disabling scrolling down</span>
+$.fn.fullpage.setAllowScrolling(<span class="literal">false</span>, <span class="string">'down'</span>);
+
+<span class="comment">//disabling scrolling down and right</span>
+$.fn.fullpage.setAllowScrolling(<span class="literal">false</span>, <span class="string">'down, right'</span>);
+</code></pre>
+<hr>
+<h3 id="setKeyboardScrolling_28boolean_2C__5Bdirections_5D_29"><a href="#setKeyboardScrolling_28boolean_2C__5Bdirections_5D_29" class="headerlink" title="setKeyboardScrolling(boolean, [directions])"></a>setKeyboardScrolling(boolean, [directions])</h3><p><a href="http://codepen.io/alvarotrigo/pen/GJXNwm">Demo</a> Adds or remove the possibility of scrolling through sections by using the keyboard arrow keys (which is active by default).</p>
+<ul>
+<li><code>directions</code>: (optional parameter) Admitted values: <code>all</code>, <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code> or a combination of them separated by commas like <code>down, right</code>. It defines the direction for which the scrolling will be enabled or disabled.</li>
+</ul>
+<pre><code class="javascript"><span class="comment">//disabling all keyboard scrolling</span>
+$.fn.fullpage.setKeyboardScrolling(<span class="literal">false</span>);
+
+<span class="comment">//disabling keyboard scrolling down</span>
+$.fn.fullpage.setKeyboardScrolling(<span class="literal">false</span>, <span class="string">'down'</span>);
+
+<span class="comment">//disabling keyboard scrolling down and right</span>
+$.fn.fullpage.setKeyboardScrolling(<span class="literal">false</span>, <span class="string">'down, right'</span>);
+</code></pre>
+<hr>
+<h3 id="setRecordHistory_28boolean_29"><a href="#setRecordHistory_28boolean_29" class="headerlink" title="setRecordHistory(boolean)"></a>setRecordHistory(boolean)</h3><p><a href="http://codepen.io/alvarotrigo/pen/rVZWQb">Demo</a> Defines whether to record the history for each hash change in the URL.</p>
+<pre><code class="javascript">$.fn.fullpage.setRecordHistory(<span class="literal">false</span>);
+</code></pre>
+<hr>
+<h3 id="setScrollingSpeed_28milliseconds_29"><a href="#setScrollingSpeed_28milliseconds_29" class="headerlink" title="setScrollingSpeed(milliseconds)"></a>setScrollingSpeed(milliseconds)</h3><p><a href="http://codepen.io/alvarotrigo/pen/NqLbeY">Demo</a> Defines the scrolling speed in milliseconds.</p>
+<pre><code class="javascript">$.fn.fullpage.setScrollingSpeed(<span class="number">700</span>);
+</code></pre>
+<hr>
+<h3 id="destroy_28type_29"><a href="#destroy_28type_29" class="headerlink" title="destroy(type)"></a>destroy(type)</h3><p><a href="http://codepen.io/alvarotrigo/pen/bdxBzv">Demo</a> Destroys the plugin events and optionally its HTML markup and styles.<br>Ideal to use when using AJAX to load content. ()</p>
+<ul>
+<li><code>type</code>: can be empty or <code>all</code>. If <code>all</code> is passed, the HTML markup and styles used by fullpage.js will be removed. This way the original HTML markup, the one used before any plugin modification is made, will be maintained.</li>
+</ul>
+<pre><code class="javascript"><span class="comment">//destroy any plugin event (scrolls, hashchange in the URL...)</span>
+$.fn.fullpage.destroy();
+
+<span class="comment">//destroy any plugin event and any plugin modification done over your original HTML markup.</span>
+$.fn.fullpage.destroy(<span class="string">'all'</span>);
+</code></pre>
+<hr>
+<h3 id="reBuild_28_29"><a href="#reBuild_28_29" class="headerlink" title="reBuild()"></a>reBuild()</h3><p>Updates the DOM structure to fit the new window size or its contents.<br>Ideal to use in combination with AJAX calls or external changes in the DOM structure of the site.</p>
+<pre><code class="javascript">$.fn.fullpage.reBuild();
+</code></pre>
+<p>##Lazy Loading<br><a href="http://codepen.io/alvarotrigo/pen/eNLBXo">Demo</a> fullPage.js provides a way to lazy load images, videos and audio elements so they won’t slow down the loading of your site or unnecessarily waste data transfer.<br>When using lazy loading, all these elements will only get loaded when entering in the viewport.<br>To enable lazy loading all you need to do is change your <code>src</code> attribute to <code>data-src</code> as shown below:</p>
+<pre><code>&lt;img data-src=&quot;image.png&quot;&gt;
+&lt;video&gt;
+    &lt;source data-src=&quot;video.webm&quot; type=&quot;video/webm&quot; /&gt;
+    &lt;source data-src=&quot;video.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+</code></pre><h2 id="Callbacks"><a href="#Callbacks" class="headerlink" title="Callbacks"></a>Callbacks</h2><p><a href="http://codepen.io/alvarotrigo/pen/XbPNQv">Demo</a> You can see them in action <a href="http://alvarotrigo.com/fullPage/examples/callbacks.html">here</a>.</p>
+<p>###afterLoad (<code>anchorLink</code>, <code>index</code>)<br>Callback fired once the sections have been loaded, after the scrolling has ended.<br>Parameters:</p>
+<ul>
+<li><code>anchorLink</code>: anchorLink corresponding to the section.</li>
+<li><code>index</code>: index of the section. Starting from 1.</li>
+</ul>
+<p>In case of not having anchorLinks defined in the plugin the <code>index</code> parameter would be the only one to use.</p>
+<p>Example:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+    anchors: [<span class="string">'firstPage'</span>, <span class="string">'secondPage'</span>, <span class="string">'thirdPage'</span>, <span class="string">'fourthPage'</span>, <span class="string">'lastPage'</span>],
+
+    afterLoad: <span class="function"><span class="keyword">function</span>(<span class="params">anchorLink, index</span>)</span>{
+        <span class="keyword">var</span> loadedSection = $(<span class="keyword">this</span>);
+
+        <span class="comment">//using index</span>
+        <span class="keyword">if</span>(index == <span class="number">3</span>){
+            alert(<span class="string">"Section 3 ended loading"</span>);
+        }
+
+        <span class="comment">//using anchorLink</span>
+        <span class="keyword">if</span>(anchorLink == <span class="string">'secondSlide'</span>){
+            alert(<span class="string">"Section 2 ended loading"</span>);
+        }
+    }
+});
+</code></pre>
+<hr>
+<p>###onLeave (<code>index</code>, <code>nextIndex</code>, <code>direction</code>)<br>This callback is fired once the user leaves a section, in the transition to the new section.<br>Returning <code>false</code> will cancel the move before it takes place.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>index</code>: index of the leaving section. Starting from 1.</li>
+<li><code>nextIndex</code>: index of the destination section. Starting from 1.</li>
+<li><code>direction</code>: it will take the values <code>up</code> or <code>down</code> depending on the scrolling direction.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+    onLeave: <span class="function"><span class="keyword">function</span>(<span class="params">index, nextIndex, direction</span>)</span>{
+        <span class="keyword">var</span> leavingSection = $(<span class="keyword">this</span>);
+
+        <span class="comment">//after leaving section 2</span>
+        <span class="keyword">if</span>(index == <span class="number">2</span> &amp;&amp; direction ==<span class="string">'down'</span>){
+            alert(<span class="string">"Going to section 3!"</span>);
+        }
+
+        <span class="keyword">else</span> <span class="keyword">if</span>(index == <span class="number">2</span> &amp;&amp; direction == <span class="string">'up'</span>){
+            alert(<span class="string">"Going to section 1!"</span>);
+        }
+    }
+});
+</code></pre>
+<p>####Cancelling the scroll before it takes place<br>You can cancel the scroll by returning <code>false</code> on the <code>onLeave</code> callback:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+    onLeave: <span class="function"><span class="keyword">function</span>(<span class="params">index, nextIndex, direction</span>)</span>{
+        <span class="comment">//it won't scroll if the destination is the 3rd section</span>
+        <span class="keyword">if</span>(nextIndex == <span class="number">3</span>){
+            <span class="keyword">return</span> <span class="literal">false</span>;
+        }
+    }
+});
+</code></pre>
+<hr>
+<p>###afterRender()<br>This callback is fired just after the structure of the page is generated. This is the callback you want to use to initialize other plugins or fire any code which requires the document to be ready (as this plugin modifies the DOM to create the resulting structure).</p>
+<p>Example:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+    afterRender: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> pluginContainer = $(<span class="keyword">this</span>);
+        alert(<span class="string">"The resulting DOM structure is ready"</span>);
+    }
+});
+</code></pre>
+<hr>
+<p>###afterResize()<br>This callback is fired after resizing the browser’s window. Just after the sections are resized.</p>
+<p>Example:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+    afterResize: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> pluginContainer = $(<span class="keyword">this</span>);
+        alert(<span class="string">"The sections have finished resizing"</span>);
+    }
+});
+</code></pre>
+<hr>
+<p>###afterSlideLoad (<code>anchorLink</code>, <code>index</code>, <code>slideAnchor</code>, <code>slideIndex</code>)<br>Callback fired once the slide of a section have been loaded, after the scrolling has ended.<br>Parameters:</p>
+<ul>
+<li><code>anchorLink</code>: anchorLink corresponding to the section.</li>
+<li><code>index</code>: index of the section. Starting from 1.</li>
+<li><code>slideAnchor</code>: anchor corresponding to the slide (in case there is)</li>
+<li><code>slideIndex</code>: index of the slide. Starting from 1. (the default slide doesn’t count as slide, but as a section)</li>
+</ul>
+<p>In case of not having anchorLinks defined for the slide or slides the <code>slideIndex</code> parameter would be the only one to use.<br>Example:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+    anchors: [<span class="string">'firstPage'</span>, <span class="string">'secondPage'</span>, <span class="string">'thirdPage'</span>, <span class="string">'fourthPage'</span>, <span class="string">'lastPage'</span>],
+
+    afterSlideLoad: <span class="function"><span class="keyword">function</span>(<span class="params"> anchorLink, index, slideAnchor, slideIndex</span>)</span>{
+        <span class="keyword">var</span> loadedSlide = $(<span class="keyword">this</span>);
+
+        <span class="comment">//first slide of the second section</span>
+        <span class="keyword">if</span>(anchorLink == <span class="string">'secondPage'</span> &amp;&amp; slideIndex == <span class="number">1</span>){
+            alert(<span class="string">"First slide loaded"</span>);
+        }
+
+        <span class="comment">//second slide of the second section (supposing #secondSlide is the</span>
+        <span class="comment">//anchor for the second slide</span>
+        <span class="keyword">if</span>(index == <span class="number">2</span> &amp;&amp; slideIndex == <span class="string">'secondSlide'</span>){
+            alert(<span class="string">"Second slide loaded"</span>);
+        }
+    }
+});
+</code></pre>
+<hr>
+<p>###onSlideLeave (<code>anchorLink</code>, <code>index</code>, <code>slideIndex</code>, <code>direction</code>, <code>nextSlideIndex</code>)<br>This callback is fired once the user leaves an slide to go to another, in the transition to the new slide.<br>Returning <code>false</code> will cancel the move before it takes place.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>anchorLink</code>: anchorLink corresponding to the section.</li>
+<li><code>index</code>: index of the section. Starting from 1.</li>
+<li><code>slideIndex</code>: index of the slide. <strong>Starting from 0.</strong></li>
+<li><code>direction</code>: takes the values <code>right</code> or <code>left</code> depending on the scrolling direction.</li>
+<li><code>nextSlideIndex</code>: index of the destination slide. <strong>Starting from 0.</strong></li>
+</ul>
+<p>Example:</p>
+<pre><code class="javascript">$(<span class="string">'#fullpage'</span>).fullpage({
+    onSlideLeave: <span class="function"><span class="keyword">function</span>(<span class="params"> anchorLink, index, slideIndex, direction, nextSlideIndex</span>)</span>{
+        <span class="keyword">var</span> leavingSlide = $(<span class="keyword">this</span>);
+
+        <span class="comment">//leaving the first slide of the 2nd Section to the right</span>
+        <span class="keyword">if</span>(index == <span class="number">2</span> &amp;&amp; slideIndex == <span class="number">0</span> &amp;&amp; direction == <span class="string">'right'</span>){
+            alert(<span class="string">"Leaving the fist slide!!"</span>);
+        }
+
+        <span class="comment">//leaving the 3rd slide of the 2nd Section to the left</span>
+        <span class="keyword">if</span>(index == <span class="number">2</span> &amp;&amp; slideIndex == <span class="number">2</span> &amp;&amp; direction == <span class="string">'left'</span>){
+            alert(<span class="string">"Going to slide 2! "</span>);
+        }
+    }
+});
+</code></pre>
+<p>####Cancelling a move before it takes place<br>You can cancel a move by returning <code>false</code> on the <code>onSlideLeave</code> callback. Same as with <code>onLeave</code>.</p>
+<p>#Build tasks<br>This gives the ability to compile the SCSS file to CSS as well compress and generate source-maps for the CSS and JS files.</p>
+<p>##Installing dependencies<br>You must have <code>node</code> amd <code>npm</code> installed in order to run the compile and compress tasks.</p>
+<p>Terminal:</p>
+<pre><code>// (Optional) Install Gulp module globally
+npm install gulp -g
+
+// Install fullpage&apos;s build dependencies
+npm install
+</code></pre><p>##Task commands</p>
+<p>Terminal:</p>
+<pre><code>// Only compile the SCSS
+gulp scss
+
+// Only compress the CSS
+gulp css
+
+// Only compress the JS
+gulp js
+
+// Runs the css and js tasks (not the scss)
+gulp
+</code></pre><p>#Resources</p>
+<ul>
+<li><a href="https://goo.gl/HuFudq">Wordpress theme</a></li>
+<li><a href="http://matthewlein.com/ceaser/">CSS Easing Animation Tool - Matthew Lein</a> (useful to define the <code>easingcss3</code> value)</li>
+<li><a href="http://www.jsdelivr.com/#!jquery.fullpage">fullPage.js jsDelivr CDN</a></li>
+<li><a href="http://octobercms.com/plugin/freestream-parallax">fullPage.js plugin for October CMS</a></li>
+<li><a href="https://wordpress.org/plugins/wp-fullpage/">fullPage.js wordpress plugin</a></li>
+<li><a href="http://premium.wpmudev.org/blog/build-apple-inspired-full-page-scrolling-pages-for-your-wordpress-site/">Integrating fullPage.js with Wordpress (Tutorial)</a></li>
+</ul>
+<h2 id="Who_is_using_fullPage-js"><a href="#Who_is_using_fullPage-js" class="headerlink" title="Who is using fullPage.js"></a>Who is using fullPage.js</h2><p>If you want your page to be listed here. Please <a href="mailto:alvaro@alvarotrigo.com">contact me</a> with the URL.</p>
+<p><a href="http://www.yourprimer.com/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/google.png" alt="Google"></a><br><a href="http://www.sony-asia.com/microsite/mdr-10/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/sony.gif" alt="Sony"></a><br><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/vodafone.png" alt="Vodafone"><br><a href="http://www.britishairways.com/en-gb/information/travel-classes/experience-our-cabins"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/british-airways-fullpage.gif" alt="British Airways"></a><br><a href="http://www.battlefield.com/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/ea.png" alt="EA"></a><br><a href="http://www.mi.com/shouhuan"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/mi.png" alt="Mi"></a><br><a href="http://usescribe.com/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/scribe.png" alt="scribe"></a><br><a href="http://www.matrimonia.rs/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/matrimonia.png" alt="matrimonia"></a><br><a href="http://www.getredd.com/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/redd.png" alt="redd"></a><br><a href="http://www.sanyang.com.tw/service/Conception/"><img src="http://wallpapers-for-ipad.com/fullpage/imgs3/logos/sym.png" alt="redd"></a></p>
+<ul>
+<li><a href="http://www.britishairways.com/en-gb/information/travel-classes/experience-our-cabins">http://www.britishairways.com/en-gb/information/travel-classes/experience-our-cabins</a></li>
+<li><a href="http://www.sony-asia.com/microsite/mdr-10/">http://www.sony-asia.com/microsite/mdr-10/</a></li>
+<li><a href="http://www.yourprimer.com/">http://www.yourprimer.com/</a></li>
+<li><a href="http://burntmovie.com/">http://burntmovie.com/</a></li>
+<li><a href="http://essenso.com/">http://essenso.com/</a></li>
+<li><a href="http://www.battlefield.com/">http://www.battlefield.com/</a></li>
+<li><a href="http://www.kibey.com/">http://www.kibey.com/</a></li>
+<li><a href="http://www.newjumoconcept.com/">http://www.newjumoconcept.com/</a></li>
+<li><a href="http://medoff.ua/en/">http://medoff.ua/en/</a></li>
+<li><a href="http://promo.prestigio.com/grace1/">http://promo.prestigio.com/grace1/</a></li>
+<li><a href="http://www.mi.com/shouhuan">http://www.mi.com/shouhuan</a></li>
+<li><a href="https://moneytree.jp/">https://moneytree.jp/</a></li>
+<li><a href="http://torchbrowser.com/">http://torchbrowser.com/</a></li>
+<li><a href="http://thekorner.fr/">http://thekorner.fr/</a></li>
+<li><a href="http://www.restaurantwoods.nl/">http://www.restaurantwoods.nl/</a></li>
+<li><a href="http://urban-walks.com/">http://urban-walks.com/</a></li>
+<li><a href="http://lingualeo.com/">http://lingualeo.com/</a></li>
+<li><a href="http://charlotteaimes.com/">http://charlotteaimes.com/</a></li>
+<li><a href="http://collection.madeofsundays.com">http://collection.madeofsundays.com</a></li>
+<li><a href="http://thiswasmybest.com/">http://thiswasmybest.com/</a></li>
+<li><a href="http://www.boxreload.com/">http://www.boxreload.com/</a></li>
+<li><a href="http://www.thespecialists.be">http://www.thespecialists.be</a></li>
+<li><a href="http://brianingle.webflow.com/">http://brianingle.webflow.com/</a></li>
+<li><a href="http://lawinenstift.com/">http://lawinenstift.com/</a></li>
+<li><a href="http://www.swenk.me/">http://www.swenk.me/</a></li>
+<li><a href="http://duis.co/">http://duis.co/</a></li>
+<li><a href="http://educationaboveall.org/">http://educationaboveall.org/</a></li>
+<li><a href="http://camfindapp.com/">http://camfindapp.com/</a></li>
+<li><a href="http://bnacademy.com.au/">http://bnacademy.com.au/</a></li>
+<li><a href="http://rockercreative.com/">http://rockercreative.com/</a></li>
+<li><a href="http://wantnova.com/">http://wantnova.com/</a></li>
+<li><a href="http://usescribe.com/">http://usescribe.com/</a></li>
+<li><a href="http://lucilecazanave.com/">http://lucilecazanave.com/</a></li>
+<li><a href="http://boxx.hk/">http://boxx.hk/</a></li>
+<li><a href="http://medlive.com">http://medlive.com</a></li>
+<li><a href="http://bearonunicycle.com/">http://bearonunicycle.com/</a></li>
+<li><a href="http://rawmilk.dk/en/">http://rawmilk.dk/en/</a></li>
+<li><a href="http://www.famavolat.com/">http://www.famavolat.com/</a></li>
+<li><a href="http://www.carpetloverclub.com/">http://www.carpetloverclub.com/</a></li>
+<li><a href="http://www.sanyang.com.tw/service/Conception/">http://www.sanyang.com.tw/service/Conception/</a></li>
+<li><a href="http://www.batzaya.net/">http://www.batzaya.net/</a></li>
+<li><a href="http://www.graphicid.dk/">http://www.graphicid.dk/</a></li>
+<li><a href="http://www.jukstapoz.com/">http://www.jukstapoz.com/</a></li>
+<li><a href="http://portfolio.io.utwente.nl/student/dijkavan/">http://portfolio.io.utwente.nl/student/dijkavan/</a></li>
+<li><a href="http://www.carlphot.com/">http://www.carlphot.com/</a></li>
+<li><a href="http://medissix.com/">http://medissix.com/</a></li>
+<li><a href="http://trasmissione-energia.terna.it/">http://trasmissione-energia.terna.it/</a></li>
+<li><a href="http://www.thefoodmovie.com/">http://www.thefoodmovie.com/</a></li>
+<li><a href="http://www.villareginateodolinda.it">http://www.villareginateodolinda.it</a></li>
+<li><a href="http://www.kesstrio.com">http://www.kesstrio.com</a></li>
+<li><a href="http://www.karmaffne.com/">http://www.karmaffne.com/</a></li>
+<li><a href="http://fossdistillery.is">http://fossdistillery.is</a></li>
+<li><a href="http://www.conversionculture.com/">http://www.conversionculture.com/</a></li>
+<li><a href="http://ded-morozz.kiev.ua/">http://ded-morozz.kiev.ua/</a></li>
+<li><a href="http://www.fergalkeenan.com">http://www.fergalkeenan.com</a></li>
+<li><a href="http://yizeng.me/">http://yizeng.me/</a></li>
+<li><a href="http://neolearning.eu/">http://neolearning.eu/</a></li>
+<li><a href="http://unabridgedsoftware.com/">http://unabridgedsoftware.com/</a></li>
+<li><a href="http://wc2014.plnwrx.com/">http://wc2014.plnwrx.com/</a></li>
+<li><a href="http://organice.io/">http://organice.io/</a></li>
+<li><a href="http://atlanticcorp.us/">http://atlanticcorp.us/</a></li>
+<li><a href="http://moysport.ru/">http://moysport.ru/</a></li>
+<li><a href="http://wcfixtures.co.uk/">http://wcfixtures.co.uk/</a></li>
+<li><a href="http://www.dopehustleinc.com/default.php">http://www.dopehustleinc.com/default.php</a></li>
+<li><a href="http://themify.me/demo/#theme=fullpane">http://themify.me/demo/#theme=fullpane</a></li>
+<li><a href="http://dancingroad.com">http://dancingroad.com</a></li>
+<li><a href="http://www.camanihome.com/">http://www.camanihome.com/</a></li>
+<li><a href="http://www.exapoint.ch/">http://www.exapoint.ch/</a></li>
+<li><a href="https://life2film.com/en/">https://life2film.com/en/</a></li>
+<li><a href="http://www.altamirarecovery.com/shame/">http://www.altamirarecovery.com/shame/</a></li>
+</ul>
+<p>You can find another list <a href="http://libscore.com/#$.fn.fullpage">here</a>.</p>
+<h2 id="Donations"><a href="#Donations" class="headerlink" title="Donations"></a>Donations</h2><p>Donations would be more than welcome :)</p>
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=BEK5JQCQMED4J&amp;lc=GB&amp;item_name=fullPage%2ejs&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="Donate"></a></p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>(The MIT License)</p>
+<p>Copyright (c) 2013 Alvaro Trigo &lt;alvaro@alvarotrigo.com&gt;</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining<br>a copy of this software and associated documentation files (the<br>‘Software’), to deal in the Software without restriction, including<br>without limitation the rights to use, copy, modify, merge, publish,<br>distribute, sublicense, and/or sell copies of the Software, and to<br>permit persons to whom the Software is furnished to do so, subject to<br>the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be<br>included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND,<br>EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br>MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.<br>IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY<br>CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,<br>TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br>SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
