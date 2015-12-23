@@ -1,0 +1,85 @@
+<h1 id="fullPage-js_pure_Javascript_version"><a href="#fullPage-js_pure_Javascript_version" class="headerlink" title="fullPage.js pure Javascript version"></a>fullPage.js pure Javascript version</h1><p><img src="https://raw.github.com/alvarotrigo/fullPage.js/master/examples/imgs/intro.png" alt="preview"><br><img src="https://raw.github.com/alvarotrigo/fullPage.js/master/examples/imgs/compatible.gif" alt="compatibility"></p>
+<p><img src="http://img.shields.io/badge/fullPage.js-v0.0.5-brightgreen.svg" alt="javascript.fullPage.js version"><br><a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a><br>6Kb gziped!</p>
+<ul>
+<li><a href="http://alvarotrigo.com/fullPage/pure-javascript/">Live demo</a></li>
+</ul>
+<p>Invite me to a coffee<br><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=BEK5JQCQMED4J&amp;lc=GB&amp;item_name=fullPage%2ejs&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="Donate"></a></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is in Alpha version and support for it won’t be provided yet.<br>This light version of fullpage.js won’t provide some options available in the jQuery version such as:</p>
+<ul>
+<li><code>scrollOverflow</code></li>
+<li><code>verticalCentered</code></li>
+<li><code>continuousVertical</code></li>
+<li><code>loopBottom</code></li>
+<li><code>loopTop</code></li>
+<li><code>normalScrollElements</code></li>
+<li><code>normalScrollElementTouchThreshold</code></li>
+<li><code>controlArrowColor</code></li>
+<li><code>sectionsColor</code></li>
+<li><code>paddingTop</code></li>
+<li><code>paddingBottom</code></li>
+<li><code>fixedElements</code></li>
+</ul>
+<h2 id="Compatibility"><a href="#Compatibility" class="headerlink" title="Compatibility"></a>Compatibility</h2><p>fullPage.js is fully functional on all modern browsers, as well as some old ones such as Internet Explorer 8, 9, Opera 12, etc.<br>It works with browsers with CSS3 support and with the ones which don’t have it, making it ideal for old browsers compatibility.<br>It also provides touch support for mobile phones, tablets and touch screen computers.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>As you can see in the <a href="https://github.com/alvarotrigo/fullPage.js/blob/master/pure%20javascript%20(Alpha">demo file</a>/demo.html), you will need to include:</p>
+<ul>
+<li>javascript.fullPage.js (or its minified version)</li>
+<li>javascript.fullPage.css</li>
+</ul>
+<p>Example of initialization:</p>
+<pre><code class="javascript">fullpage.initialize(<span class="string">'#fullpage'</span>, {
+    anchors: [<span class="string">'firstPage'</span>, <span class="string">'secondPage'</span>, <span class="string">'3rdPage'</span>, <span class="string">'4thpage'</span>, <span class="string">'lastPage'</span>],
+    menu: <span class="string">'#menu'</span>,
+    css3:<span class="literal">false</span>
+});
+</code></pre>
+<p>A more complex initialization with all options set could look like this:</p>
+<pre><code class="javascript">fullpage.initialize(<span class="string">'#fullpage'</span>, {
+    <span class="comment">//navigation</span>
+    <span class="string">'menu'</span>: <span class="literal">false</span>,
+    <span class="string">'anchors'</span>:[],
+    <span class="string">'navigation'</span>: <span class="literal">false</span>,
+    <span class="string">'navigationPosition'</span>: <span class="string">'right'</span>,
+    <span class="string">'navigationColor'</span>: <span class="string">'#000'</span>,
+    <span class="string">'navigationTooltips'</span>: [],
+    <span class="string">'slidesNavigation'</span>: <span class="literal">false</span>,
+    <span class="string">'slidesNavPosition'</span>: <span class="string">'bottom'</span>,
+    <span class="string">'scrollBar'</span>: <span class="literal">false</span>,
+
+    <span class="comment">//scrolling</span>
+    <span class="string">'css3'</span>: <span class="literal">true</span>,
+    <span class="string">'scrollingSpeed'</span>: <span class="number">700</span>,
+    <span class="string">'autoScrolling'</span>: <span class="literal">true</span>,
+    <span class="string">'easingcss3'</span>: <span class="string">'ease'</span>,
+    <span class="string">'loopHorizontal'</span>: <span class="literal">true</span>,
+    <span class="string">'touchSensitivity'</span>: <span class="number">5</span>,
+
+    <span class="comment">//Accessibility</span>
+    <span class="string">'keyboardScrolling'</span>: <span class="literal">true</span>,
+    <span class="string">'recordHistory'</span>: <span class="literal">true</span>,
+
+    <span class="comment">//design</span>
+    <span class="string">'controlArrows'</span>: <span class="literal">true</span>,
+
+    <span class="comment">//Custom selectors</span>
+    <span class="string">'sectionSelector'</span>: <span class="string">'.section'</span>,
+    <span class="string">'slideSelector'</span>: <span class="string">'.slide'</span>,
+
+
+    <span class="comment">//events</span>
+    <span class="string">'afterLoad'</span>: <span class="literal">null</span>,
+    <span class="string">'onLeave'</span>: <span class="literal">null</span>,
+    <span class="string">'afterRender'</span>: <span class="literal">null</span>,
+    <span class="string">'afterResize'</span>: <span class="literal">null</span>,
+    <span class="string">'afterReBuild'</span>: <span class="literal">null</span>,
+    <span class="string">'afterSlideLoad'</span>: <span class="literal">null</span>,
+    <span class="string">'onSlideLeave'</span>: <span class="literal">null</span>
+});
+</code></pre>
+<p>Functions has the same syntax and functionality than in the jQuery version, but they should be called like so:</p>
+<pre><code class="javascript"><span class="comment">//calling a function from the pure Javascript version of fullPage.js</span>
+fullpage.moveSectionDown();
+</code></pre>
+<p>In contrast with the calls from the the jQuery version of fullPage.js:</p>
+<pre><code class="javascript"><span class="comment">//calling a function from the jQuery version of fullPage.js</span>
+$.fn.fullpage.moveSectionDown();
+</code></pre>

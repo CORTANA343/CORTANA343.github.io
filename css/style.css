@@ -1,0 +1,312 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #FFFFFF;
+}
+/*主内容*/
+/*主屏幕01*/
+.section1{
+	background: url(./imgs/BlackMan.jpg);
+	background-size: 100% 100%;
+}
+.section p{
+	position: absolute;
+	top: 24%;
+	left: 60%;
+	z-index: 2;
+	font-family: "微软雅黑";
+	font-size: 60px;
+	color: rgba(255,255,255,0.8);
+}
+.section1 p:after{
+	content: '';
+	width: 400px;
+	height: 1px;
+	background-color:rgba(255,255,255,0.8) ;
+	position: absolute;
+	top: 105%;
+	left: -23%;
+}
+.section h5{
+	position: absolute;
+	top: 38%;
+	left: 62%;
+	z-index: 2;
+	color: rgba(255,255,255,0.8);
+	font-family: "方正黑体";
+	font-size: 17px;
+}
+/*主屏幕02*/
+.section2
+{
+	background-image: url(./imgs/runchild2.jpg);
+	background-size: 100% 100%;
+}
+.section2 #background{
+	width: 100%;
+	height: 100%;
+	background-color:rgba(0,0,0,0.5) ;
+}
+.section h1{
+	position: absolute;
+	top: 15%;
+	left: 10%;
+	font-family: "微软雅黑";
+	font-size: 60px;
+	color: rgba(255,255,255,0.8);
+}
+.section h2{
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	font-family: "微软雅黑";
+	font-size: 40px;
+	color: rgba(255,255,255,0.8);
+}
+/*屏幕3*/
+.section3
+{
+    background-color: #2C3E50;
+}
+/*NEUQ*/
+.section3 .slide1{
+	background: url(./imgs/dongqin.jpg);
+	background-size: 100% 100%;
+}
+.section .slide1 .background{
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+}
+.section .slide1 .background #left-bgblock{
+	position: relative;
+	top: 58%;
+	left: 0%;
+	width: 60%;
+	height: 20%;
+	background-color: rgba(255,255,255,0.3);
+}
+.section .slide1 .background #left-bgblock p{
+	margin-top: 13px;
+	left: 55%;
+	color:rgba(255,255,255,1);
+	font-family: "微软雅黑";
+	font-size: 34px;
+	font-weight: 400;
+	text-align: center;
+	border: 0px;
+}
+
+/*3029*/
+.section .slide2{
+	background: url(./imgs/tree.jpg);
+	background-size: 100% 100%;
+}
+.section .slide2 div{
+	cursor: pointer;
+}
+/*照片1*/
+.section .slide2 #pic1{
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	background-color:rgba(255,255,255,1) ;
+	position: relative;
+	top: 0%;
+	left: 220px;
+	width: 250px;
+	height: 280px; 
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+	transition: .5s ease-in-out;
+	z-index: 1;
+}
+.section .slide2 #pic1:hover{
+	z-index: 2;
+	transform: scale(1.1);
+	box-shadow:1px 1px 7px rgba(0,0,0,0.9);
+}
+.section .slide2 #pic1 div{
+	margin: 0 auto;
+	width: 230px;
+	height: 250px;
+	background: url(./imgs/3029/baba.jpg);
+	background-size: 100% 100%;
+}
+.section .slide2 #pic1 p{
+	position: relative;
+	top: 4%;
+	left: 2%;
+	font-family: "黑体";
+	font-size: 17px;
+	font-weight: 400;
+	color: rgba(0,0,0,0.8);
+	text-align: center;
+}
+/*照片2*/
+.section .slide2 #pic2{
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	background-color:rgba(255,255,255,1) ;
+	position: relative;
+	top: 100px;
+	left: 225px;
+	width: 250px;
+	height: 280px;
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+	transition: .5s ease-in-out;
+	z-index: 1;
+}
+.section .slide2 #pic2 div{
+	margin: 0 auto;
+	width: 230px;
+	height: 250px;
+	background: url(./imgs/3029/erzi.jpg);
+	background-size: 100% 100%;
+}
+.section .slide2 #pic2 p{
+	position: relative;
+	top: 4%;
+	left: 2%;
+	font-family: "黑体";
+	font-size: 17px;
+	font-weight: 400;
+	color: rgba(0,0,0,0.8);
+	text-align: center;
+}
+.section .slide2 #pic2:hover{
+	z-index: 2;
+	transform: scale(1.1);
+	box-shadow:1px 1px 7px rgba(0,0,0,0.9);
+}
+/*照片3*/
+.section .slide2 #pic3{
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	background-color:rgba(255,255,255,1) ;
+	position: relative;
+	top: -70px;
+	left: 225px;
+	width: 250px;
+	height: 280px;
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+	transition: .5s ease-in-out;
+	z-index: 1;
+}
+.section .slide2 #pic3 div{
+	margin: 0 auto;
+	width: 230px;
+	height: 250px;
+	background: url(./imgs/3029/huinima.jpg);
+	background-size: 100% 100%;
+}
+.section .slide2 #pic3 p{
+	position: relative;
+	top: 4%;
+	left: 2%;
+	font-family: "黑体";
+	font-size: 17px;
+	font-weight: 400;
+	color: rgba(0,0,0,0.8);
+	text-align: center;
+}
+.section .slide2 #pic3:hover{
+	z-index: 2;
+	transform: scale(1.1);
+	box-shadow:1px 1px 7px rgba(0,0,0,0.9);
+}
+/*照片4*/
+.section .slide2 #pic4{
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	background-color:rgba(255,255,255,1) ;
+	position: relative;
+	top: 100px;
+	left: 225px;
+	width: 250px;
+	height: 280px; 
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+	transition: .5s ease-in-out;
+	z-index: 1;
+}
+.section .slide2 #pic4 div{
+	margin: 0 auto;
+	width: 230px;
+	height: 250px;
+	background: url(./imgs/3029/wangnimama.jpg);
+	background-size: 100% 100%;
+}
+.section .slide2 #pic4 p{
+	position: relative;
+	top: 4%;
+	left: 2%;
+	font-family: "黑体";
+	font-size: 17px;
+	font-weight: 400;
+	color: rgba(0,0,0,0.8);
+	text-align: center;
+}
+.section .slide2 #pic4:hover{
+	z-index: 2;
+	transform: scale(1.1);
+	box-shadow:1px 1px 7px rgba(0,0,0,0.9);
+}
+.section4
+{
+    background-color: #FF9900;
+} 
+/*菜单栏*/
+#nav{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 50px;
+	z-index: 2;
+	background-color: rgba(255,255,255,0.3);
+}
+#nav ul{
+	position: relative;
+	top: 10px;
+	right: 20px;
+	width: 420px;
+	height: 40px;
+}
+#nav ul li{
+	list-style-type: none;
+	position: relative;
+	left: 850px;	
+	float: left;
+	height: 40px;
+	width: 50px;
+	margin-right: 45px;
+}
+#nav ul li a{
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	font-family: "微软雅黑";
+	color: rgba(255,255,255,1);
+}
+#nav ul li a:hover{
+	color: lightskyblue;
+}
+/*右边栏*/
+#rightsidebar { margin: 0; padding: 0; position: fixed; right: 1%; top: 40%; list-style-type: none; z-index: 2;}
+#rightsidebar li { margin-top:  10px ;width: 10px;height: 10px;margin-top: 10px;margin-top: 10px;}
+#rightsidebar a { margin-top:3px;padding: 0; float: right;width: 8px;height: 8px;border: 1px solid rgba(255,255,255,0.8);border-radius: 50%;}
+#rightsidebar .active a { color: #fff; background-color: rgba(255,255,255,0.8);}
+/*section3 横向滚动*/
+.section .slide1{
+	background-color: rgba(255,255,255,1);
+}

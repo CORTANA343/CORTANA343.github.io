@@ -392,9 +392,14 @@ div[data-level='1'] a {
     border: none;
 }
 
-#navbar-title a {
+#navbar-title p {
+	position: relative;
     padding-left: 0;
+    top: -40px;
     cursor: default;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 24px;
 }
 
 #navbar-title a:hover {
